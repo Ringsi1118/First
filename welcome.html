@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background: linear-gradient(135deg, #03032a, #764ba2);
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    .welcome-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .monkey-wrapper {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin-bottom: 20px;
+      animation: wave 2s infinite alternate;
+    }
+
+    .monkey {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Ears */
+    .ear {
+      width: 35px;
+      height: 35px;
+      background: #8d5a3b;
+      border-radius: 50%;
+      position: absolute;
+      top: 20px;
+    }
+    .ear.left { left: 0; }
+    .ear.right { right: 0; }
+
+    /* Face */
+    .face {
+      width: 80px;
+      height: 80px;
+      background: #b97a56;
+      border-radius: 50%;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    /* Eyes */
+    .eye {
+      width: 8px;
+      height: 8px;
+      background: #000;
+      border-radius: 50%;
+      position: absolute;
+      top: 30px;
+    }
+    .eye.left { left: 22px; }
+    .eye.right { right: 22px; }
+
+    /* Hands */
+    .hand {
+      width: 35px;
+      height: 18px;
+      background: #8d5a3b;
+      border-radius: 20px;
+      position: absolute;
+      top: 55px;
+      transition: 0.4s ease;
+    }
+    .left-hand { left: -10px; }
+    .right-hand { right: -10px; }
+
+    /* Cover eyes animation */
+    .monkey.hide .left-hand {
+      transform: translate(30px, -15px) rotate(20deg);
+    }
+    .monkey.hide .right-hand {
+      transform: translate(-30px, -15px) rotate(-20deg);
+    }
+    .monkey.hide .eye { opacity: 0; }
+
+    /* Wave animation */
+    @keyframes wave {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(10deg); }
+      100% { transform: rotate(-10deg); }
+    }
+
+    .welcome-box {
+      background: rgba(255,255,255,0.1);
+      padding: 50px;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .welcome-box h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      animation: floatText 2s infinite ease-in-out;
+    }
+    .welcome-box p { font-size: 18px; }
+    .welcome-box a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: underline;
+      margin-top: 10px;
+      display: inline-block;
+    }
+
+    @keyframes floatText {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-wrapper">
+
+    <!-- Monkey above welcome box -->
+    <div class="monkey-wrapper">
+      <div class="monkey" id="monkey">
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+        <div class="face">
+          <div class="eye left"></div>
+          <div class="eye right"></div>
+        </div>
+        <div class="hand left-hand"></div>
+        <div class="hand right-hand"></div>
+      </div>
+    </div>
+
+    <div class="welcome-box">
+      <h1 id="welcome-msg">Welcome!</h1>
+    
+      <a href="login.html">Go to Login</a>
+    </div>
+
+  </div>
+
+  <script>
+    // Show username
+    const username = localStorage.getItem("username");
+    const welcomeMsg = document.getElementById("welcome-msg");
+    if (username && welcomeMsg) {
+      welcomeMsg.textContent = `Welcome, ${username}!`;
+    }
+
+    // Optional: monkey waves when page loads
+    const monkey = document.getElementById("monkey");
+    setTimeout(() => {
+      monkey.classList.add("wave");
+    }, 500);
+  </script>
+</body>
+</html>
