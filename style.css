@@ -241,5 +241,22 @@ button:hover {
     height: 100px;
   }
 }
+/* LOGIN WRAPPER */
+.login-wrapper {
+  position: relative;
+  width: 90%;        /* Use relative width instead of fixed 350px */
+  max-width: 400px;  /* Limit on larger screens */
+  margin: 0 auto;    /* Center horizontally */
+}
+
+/* CONTAINER CARD */
+.container {
+  width: 100%;       /* Full width inside wrapper */
+  padding: 30px 20px; /* Less padding on small screens */
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
 
 
