@@ -236,7 +236,7 @@ button:hover {
     font-size: 0.9rem;
   }
   .monkey-wrapper {
-    top: -70px;
+    top: -90px;
     width: 100px;
     height: 100px;
   }
@@ -257,6 +257,7 @@ button:hover {
   text-align: center;
   box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
+
 
 
 
