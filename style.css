@@ -252,11 +252,12 @@ button:hover {
 /* CONTAINER CARD */
 .container {
   width: 100%;       /* Full width inside wrapper */
-  padding: 30px 20px; /* Less padding on small screens */
+  padding: 30px 30px; /* Less padding on small screens */
   border-radius: 20px;
   text-align: center;
   box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
+
 
 
 
